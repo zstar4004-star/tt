@@ -1,0 +1,17 @@
+name: tree_engine
+description: Professional tree editor rendering engine.
+
+version: 1.0.0
+
+publish_to: "none"
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  vector_math: ^2.1.4
+
+flutter:
