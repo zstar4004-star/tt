@@ -1,17 +1,80 @@
+name: family_tree_designer
+description: Professional Family Tree Designer built with Flutter.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
+  # Material Icons
   cupertino_icons: ^1.0.8
 
-  provider: ^6.1.2
+  # State Management
+  provider: ^6.1.5
 
-  shared_preferences: ^2.5.3
-
-  path_provider: ^2.1.5
-
-  image: ^4.5.4
-
+  # UUID
   uuid: ^4.5.1
 
-  vector_math: ^2.1.4
+  # Matrix & Math
+  vector_math: ^2.2.0
+
+  # Export PNG
+  image: ^4.5.4
+
+  # Save Projects
+  path_provider: ^2.1.5
+  path: ^1.9.1
+
+  # JSON
+  collection: ^1.19.1
+
+  # File Picker
+  file_picker: ^10.3.2
+
+  # Share
+  share_plus: ^11.1.0
+
+  # Save As
+  file_selector: ^1.0.4
+
+  # SVG Support
+  flutter_svg: ^2.2.0
+
+  # Google Fonts
+  google_fonts: ^6.3.1
+
+  # Pan & Zoom Helpers
+  gesture_x_detector: ^1.1.1
+
+  # Logging
+  logger: ^2.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/textures/
+    - assets/fonts/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
