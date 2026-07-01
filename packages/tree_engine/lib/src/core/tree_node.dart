@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'node_type.dart';
 
-class TreeNode {
+abstract class TreeNode {
   TreeNode({
     required this.id,
     required this.type,
@@ -18,10 +18,6 @@ class TreeNode {
 
   double scale = 1;
 
-  double width = 100;
-
-  double height = 100;
-
   bool visible = true;
 
   bool locked = false;
@@ -34,27 +30,17 @@ class TreeNode {
 
   final List<TreeNode> children = [];
 
-  void addChild(TreeNode node) {
-    if (children.contains(node)) {
-      return;
-    }
-
-    node.parent = this;
-
-    children.add(node);
+  void addChild(TreeNode child) {
+    child.parent = this;
+    children.add(child);
   }
 
-  void removeChild(TreeNode node) {
-    node.parent = null;
-
-    children.remove(node);
+  void removeChild(TreeNode child) {
+    child.parent = null;
+    children.remove(child);
   }
 
-  Rect get bounds {
-    return Rect.fromCenter(
-      center: position,
-      width: width,
-      height: height,
-    );
-  }
+  Rect get localBounds;
+
+  Rect get worldBounds => localBounds.shift(position);
 }
